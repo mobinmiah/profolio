@@ -1,9 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from './ui/button';
 
 const Header = ({ darkMode, toggleTheme }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  // Scroll spy functionality
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'services', 'process', 'skills', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 100; // Offset for header height
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once to set initial active section
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -37,19 +59,35 @@ const Header = ({ darkMode, toggleTheme }) => {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-text-muted-light dark:text-text-muted-dark">
-          {navItems.map((item, index) => (
-            <motion.a
-              key={item}
-              className={`${item === 'Home' ? 'text-primary' : 'hover:text-primary'} transition-colors cursor-pointer`}
-              href={`#${item.toLowerCase()}`}
-              whileHover={{ y: -2 }}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 + 0.5 }}
-            >
-              {item}
-            </motion.a>
-          ))}
+          {navItems.map((item, index) => {
+            const isActive = activeSection === item.toLowerCase();
+            return (
+              <motion.a
+                key={item}
+                className={`${
+                  isActive 
+                    ? 'text-primary font-bold relative' 
+                    : 'hover:text-primary'
+                } transition-all duration-300 cursor-pointer`}
+                href={`#${item.toLowerCase()}`}
+                whileHover={{ y: -2 }}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 + 0.5 }}
+              >
+                {item}
+                {isActive && (
+                  <motion.div
+                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary rounded-full"
+                    layoutId="activeIndicator"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
+              </motion.a>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-4">
@@ -131,20 +169,35 @@ const Header = ({ darkMode, toggleTheme }) => {
               <div className="flex flex-col h-full pt-24 px-6">
                 {/* Mobile Navigation Links */}
                 <nav className="flex flex-col space-y-6 mb-8">
-                  {navItems.map((item, index) => (
-                    <motion.a
-                      key={item}
-                      className={`${item === 'Home' ? 'text-primary' : 'text-text-main-light dark:text-text-main-dark hover:text-primary'} transition-colors cursor-pointer text-lg font-medium py-2 border-b border-gray-200/20 dark:border-gray-700/20`}
-                      href={`#${item.toLowerCase()}`}
-                      onClick={closeMobileMenu}
-                      initial={{ opacity: 0, x: 50 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {item}
-                    </motion.a>
-                  ))}
+                  {navItems.map((item, index) => {
+                    const isActive = activeSection === item.toLowerCase();
+                    return (
+                      <motion.a
+                        key={item}
+                        className={`${
+                          isActive 
+                            ? 'text-primary font-bold border-l-4 border-primary pl-4' 
+                            : 'text-text-main-light dark:text-text-main-dark hover:text-primary pl-4'
+                        } transition-all duration-300 cursor-pointer text-lg font-medium py-2 border-b border-gray-200/20 dark:border-gray-700/20 relative`}
+                        href={`#${item.toLowerCase()}`}
+                        onClick={closeMobileMenu}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {item}
+                        {isActive && (
+                          <motion.div
+                            className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-primary rounded-full"
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        )}
+                      </motion.a>
+                    );
+                  })}
                 </nav>
 
                 {/* Mobile Social Links */}

@@ -12,7 +12,7 @@ git commit -m "Initial commit: Complete MERN stack portfolio"
 ### 2. Push to GitHub
 ```bash
 # Create repository on GitHub first, then:
-git remote add origin https://github.com/mobinmiah/your-portfolio-repo.git
+git remote add origin https://github.com/mobinmiah/profolio.git
 git branch -M main
 git push -u origin main
 ```
@@ -54,7 +54,8 @@ After deployment, update the live demo link in README.md
 
 ## 🔧 Post-Deployment Tasks
 
-1. **Test the live site**
+1. **Test the live site** ✅
+   - Live at: https://mobinmiah.netlify.app
    - Check all sections load properly
    - Test contact form submission
    - Verify social media links
@@ -65,10 +66,10 @@ After deployment, update the live demo link in README.md
    - Add Google Analytics (optional)
    - Update meta descriptions if needed
 
-3. **Share Your Portfolio**
-   - Update LinkedIn profile
+3. **Share Your Portfolio** ✅
+   - Update LinkedIn profile with live URL
    - Add to GitHub profile README
-   - Share on social media
+   - Share on social media: https://mobinmiah.netlify.app
 
 ## 🌐 Custom Domain (Optional)
 

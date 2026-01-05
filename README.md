@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my skills and projects as a ME
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://your-portfolio-url.netlify.app) *(Update this after deployment)*
+[View Live Portfolio](https://mobinmiah.netlify.app)
 
 ## 🛠️ Built With
 
@@ -14,7 +14,8 @@ A modern, responsive portfolio website showcasing my skills and projects as a ME
 - **Icons**: Remix Icons, Lucide React
 - **UI Components**: shadcn/ui
 - **Form Handling**: Formspree
-- **Deployment**: Netlify
+- **Deployment**: Netlify, Vercel
+- **Build Tool**: Vite
 
 ## ✨ Features
 
@@ -57,8 +58,8 @@ src/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/mobinmiah/portfolio.git
-   cd portfolio
+   git clone https://github.com/mobinmiah/profolio.git
+   cd profolio
    ```
 
 2. **Install dependencies**
@@ -68,7 +69,7 @@ src/
 
 3. **Start development server**
    ```bash
-   npm start
+   npm run dev
    ```
 
 4. **Open your browser**
@@ -81,6 +82,8 @@ src/
 ```bash
 npm run build
 ```
+
+The build files will be in the `dist` folder.
 
 ## 📧 Contact Form Setup
 
@@ -133,8 +136,10 @@ colors: {
 ## 👨‍💻 Author
 
 **Mobin Miah**
+- Portfolio: [mobinmiah.netlify.app](https://mobinmiah.netlify.app)
 - LinkedIn: [linkedin.com/in/mobin-miah](https://www.linkedin.com/in/mobin-miah)
 - GitHub: [github.com/mobinmiah](https://github.com/mobinmiah)
+- Repository: [github.com/mobinmiah/profolio](https://github.com/mobinmiah/profolio)
 - Email: mdmobinmiah1998@gmail.com
 
 ## 🙏 Acknowledgments
