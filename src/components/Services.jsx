@@ -56,37 +56,62 @@ const Services = () => {
 
   const services = [
     {
-      icon: 'ri-reactjs-line',
-      color: 'text-blue-400',
-      bgColor: 'bg-blue-400/10',
-      title: 'Frontend Development',
-      description: 'Building responsive and interactive user interfaces with React.js, Tailwind CSS, and DaisyUI. Implementing modern features like React Router, TanStack Query, and Firebase Authentication.',
-      features: ['React.js Applications', 'Responsive Design', 'Component Libraries', 'State Management']
+      icon: "ri-reactjs-line",
+      color: "text-blue-400",
+      bgColor: "bg-blue-400/10",
+      title: "Frontend Development",
+      description:
+        "Building responsive and interactive user interfaces with React.js, Tailwind CSS, and DaisyUI. Implementing modern features like React Router, TanStack Query, and Firebase Authentication.",
+      features: [
+        "React.js Applications",
+        "Responsive Design",
+        "Component Libraries",
+        "State Management",
+      ],
     },
     {
-      icon: 'ri-nodejs-line',
-      color: 'text-green-500',
-      bgColor: 'bg-green-500/10',
-      title: 'Backend Development',
-      description: 'Creating robust APIs and server-side applications using Node.js and Express.js. Implementing JWT authentication, role-based access control, and secure payment processing with Stripe.',
-      features: ['RESTful APIs', 'Database Integration', 'Authentication Systems', 'Payment Processing']
+      icon: "ri-nodejs-line",
+      color: "text-green-500",
+      bgColor: "bg-green-500/10",
+      title: "Backend Development",
+      description:
+        "Creating robust APIs and server-side applications using Node.js and Express.js. Implementing JWT authentication, role-based access control, and secure payment processing with Stripe.",
+      features: [
+        "REST APIs",
+        "Database Integration",
+        "Authentication Systems",
+        "Payment Processing",
+      ],
     },
     {
-      icon: 'ri-database-2-line',
-      color: 'text-orange-500',
-      bgColor: 'bg-orange-500/10',
-      title: 'Database & Cloud',
-      description: 'Working with MongoDB Atlas for scalable NoSQL solutions. Implementing Firebase services for authentication and real-time features. Managing cloud deployments on Vercel and Render.',
-      features: ['MongoDB Design', 'Cloud Deployment', 'Database Optimization', 'Real-time Features']
+      icon: "ri-database-2-line",
+      color: "text-orange-500",
+      bgColor: "bg-orange-500/10",
+      title: "Database & Backend Systems",
+      description:
+        "Designing scalable MongoDB databases and building secure backend systems with Express.js. Implementing Firebase authentication, JWT authorization, and real-time features for full-stack applications.",
+      features: [
+        "MongoDB Design",
+        "Secure Authentication Systems",
+        "API Development & Integration",
+        "Real-time Features",
+      ],
     },
+
     {
-      icon: 'ri-shield-check-line',
-      color: 'text-purple-500',
-      bgColor: 'bg-purple-500/10',
-      title: 'Authentication & Security',
-      description: 'Implementing secure user authentication with Firebase Auth and JWT tokens. Building role-based systems (HR/Employee roles) with proper authorization and cookie-based session management.',
-      features: ['User Authentication', 'Role-based Access', 'Security Implementation', 'Session Management']
-    }
+      icon: "ri-shield-check-line",
+      color: "text-purple-500",
+      bgColor: "bg-purple-500/10",
+      title: "Authentication & Security",
+      description:
+        "Implementing secure user authentication with Firebase Auth and JWT tokens. Building role-based systems (HR/Employee roles) with proper authorization and cookie-based session management.",
+      features: [
+        "User Authentication",
+        "Role-based Access",
+        "Security Implementation",
+        "Session Management",
+      ],
+    },
   ];
 
   return (

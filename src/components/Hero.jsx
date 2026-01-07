@@ -62,7 +62,7 @@ const Hero = () => {
   };
 
   return (
-    <section 
+    <section
       ref={heroRef}
       className="flex-grow flex flex-col justify-center px-4 md:px-12 py-12 relative overflow-hidden"
       id="home"
@@ -71,7 +71,7 @@ const Hero = () => {
       <div className="bg-blob-1 absolute top-0 left-0 w-1/3 h-1/2 bg-primary/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
       <div className="bg-blob-2 absolute bottom-0 right-0 w-1/3 h-1/2 bg-blue-600/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
 
-      <motion.div 
+      <motion.div
         className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
         variants={containerVariants}
         initial="hidden"
@@ -79,7 +79,7 @@ const Hero = () => {
       >
         <div className="space-y-8">
           <motion.div className="space-y-2" variants={itemVariants}>
-            <motion.p 
+            <motion.p
               className="text-primary font-display font-medium tracking-[0.2em] text-sm uppercase mb-4"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -87,12 +87,12 @@ const Hero = () => {
             >
               Assalamu 'Alaikum
             </motion.p>
-            <motion.h1 
+            <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight"
               variants={itemVariants}
             >
               I'm Mobin Miah <br />
-              <motion.span 
+              <motion.span
                 className="text-primary"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -103,14 +103,15 @@ const Hero = () => {
             </motion.h1>
           </motion.div>
 
-          <motion.p 
+          <motion.p
             className="text-text-muted-light dark:text-text-muted-dark text-lg leading-relaxed max-w-xl"
             variants={itemVariants}
           >
-            Passionate MERN stack developer specializing in React.js, Node.js, Express.js, and MongoDB. 
-            I build modern web applications with Firebase Authentication, Stripe payment integration, 
-            and responsive UI using Tailwind CSS and DaisyUI. Expert in creating role-based systems 
-            and full-stack solutions from concept to deployment.
+            Junior MERN Stack Developer building modern, scalable web
+            applications with React.js, Node.js, Express.js, and MongoDB.
+            Experienced in Firebase Authentication, JWT security, Stripe
+            payments, and crafting responsive user interfaces using Tailwind CSS
+            and DaisyUI — turning ideas into complete full-stack solutions.
           </motion.p>
 
           <motion.div variants={itemVariants}>
@@ -130,7 +131,7 @@ const Hero = () => {
             </Button>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="flex flex-col md:flex-row gap-6 md:gap-10 pt-4 border-t border-gray-200/10"
             variants={itemVariants}
           >
@@ -140,9 +141,18 @@ const Hero = () => {
               </span>
               <div className="flex gap-3 flex-wrap">
                 {[
-                  { icon: 'ri-github-line', href: 'https://github.com/mobinmiah' },
-                  { icon: 'ri-linkedin-fill', href: 'https://www.linkedin.com/in/mobin-miah' },
-                  { icon: 'ri-twitter-x-line', href: 'https://x.com/MobinMiah12' }
+                  {
+                    icon: "ri-github-line",
+                    href: "https://github.com/mobinmiah",
+                  },
+                  {
+                    icon: "ri-linkedin-fill",
+                    href: "https://www.linkedin.com/in/mobin-miah",
+                  },
+                  {
+                    icon: "ri-twitter-x-line",
+                    href: "https://x.com/MobinMiah12",
+                  },
                 ].map((social, index) => (
                   <motion.a
                     key={social.icon}
@@ -167,10 +177,30 @@ const Hero = () => {
               </span>
               <div className="flex gap-3 flex-wrap">
                 {[
-                  { icon: 'ri-reactjs-line', color: 'text-blue-400', title: 'React.js', type: 'remix' },
-                  { icon: 'https://i.ibb.co.com/9H4xW9w8/node.png', color: 'text-green-500', title: 'Node.js', type: 'image' },
-                  { icon: 'ri-database-2-line', color: 'text-green-600', title: 'MongoDB', type: 'remix' },
-                  { icon: 'ri-javascript-line', color: 'text-yellow-400', title: 'JavaScript', type: 'remix' }
+                  {
+                    icon: "ri-reactjs-line",
+                    color: "text-blue-400",
+                    title: "React.js",
+                    type: "remix",
+                  },
+                  {
+                    icon: "https://i.ibb.co.com/9H4xW9w8/node.png",
+                    color: "text-green-500",
+                    title: "Node.js",
+                    type: "image",
+                  },
+                  {
+                    icon: "ri-database-2-line",
+                    color: "text-green-600",
+                    title: "MongoDB",
+                    type: "remix",
+                  },
+                  {
+                    icon: "ri-javascript-line",
+                    color: "text-yellow-400",
+                    title: "JavaScript",
+                    type: "remix",
+                  },
                 ].map((skill, index) => (
                   <motion.div
                     key={skill.icon}
@@ -181,14 +211,16 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.8 + index * 0.1 }}
                   >
-                    {skill.type === 'image' ? (
-                      <img 
-                        src={skill.icon} 
+                    {skill.type === "image" ? (
+                      <img
+                        src={skill.icon}
                         alt={skill.title}
                         className="w-6 h-6 group-hover:brightness-0 group-hover:invert transition-all"
                       />
                     ) : (
-                      <i className={`${skill.icon} text-xl ${skill.color} group-hover:text-white transition-colors`}></i>
+                      <i
+                        className={`${skill.icon} text-xl ${skill.color} group-hover:text-white transition-colors`}
+                      ></i>
                     )}
                   </motion.div>
                 ))}
@@ -197,7 +229,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
           className="relative flex justify-center lg:justify-end mt-12 lg:mt-0"
           variants={itemVariants}
         >

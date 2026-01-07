@@ -11,7 +11,7 @@ const Footer = () => {
     >
       <div className="w-full py-8 px-4 text-center border-t border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark">
         <p className="text-text-muted-light dark:text-text-muted-dark text-sm">
-          © 2024 Mobin Miah - MERN Stack Developer. All rights reserved.
+          © 2025 Mobin Miah - MERN Stack Developer. All rights reserved.
         </p>
       </div>
     </motion.footer>

@@ -26,20 +26,6 @@ const Skills = () => {
         yoyo: true,
         ease: "power2.inOut"
       });
-
-      // Animate skill progress bars when in view
-      if (isInView) {
-        const skillBars = document.querySelectorAll('.skill-progress');
-        skillBars.forEach((bar, index) => {
-          const targetWidth = bar.getAttribute('data-width');
-          gsap.to(bar, {
-            width: `${targetWidth}%`,
-            duration: 1.5,
-            delay: index * 0.1,
-            ease: "power2.out"
-          });
-        });
-      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -69,17 +55,28 @@ const Skills = () => {
   };
 
   const frontendSkills = [
-    { name: 'JavaScript (ES6+)', level: 75, icon: 'ri-javascript-fill', color: 'from-yellow-400 to-yellow-600', type: 'remix' },
-    { name: 'React.js', level: 80, icon: 'ri-reactjs-line', color: 'from-blue-400 to-blue-600', type: 'remix' },
-    { name: 'HTML5 / CSS3', level: 85, icon: 'ri-html5-fill', color: 'from-orange-500 to-red-500', type: 'remix' },
-    { name: 'Tailwind CSS', level: 70, icon: 'https://i.ibb.co.com/jkHCwtzW/tailwind.png', color: 'from-teal-400 to-teal-600', type: 'image' }
+    { name: 'JavaScript (ES6+)', icon: 'ri-javascript-fill', color: 'text-yellow-500', type: 'remix' },
+    { name: 'React.js', icon: 'ri-reactjs-line', color: 'text-blue-500', type: 'remix' },
+    { name: 'HTML5 / CSS3', icon: 'ri-html5-fill', color: 'text-orange-500', type: 'remix' },
+    { name: 'Tailwind CSS', icon: 'https://i.ibb.co.com/jkHCwtzW/tailwind.png', color: 'text-teal-500', type: 'image' }
   ];
 
   const backendSkills = [
-    { name: 'Node.js', level: 70, icon: 'https://i.ibb.co.com/9H4xW9w8/node.png', color: 'from-green-400 to-green-600', type: 'image' },
-    { name: 'Express.js', level: 65, icon: 'ri-server-line', color: 'from-gray-600 to-gray-800', type: 'remix' },
-    { name: 'JWT Authentication', level: 60, icon: 'ri-key-2-fill', color: 'from-purple-400 to-purple-600', type: 'remix' },
-    { name: 'RESTful APIs', level: 68, icon: 'ri-code-s-slash-line', color: 'from-indigo-400 to-indigo-600', type: 'remix' }
+    { name: 'Node.js', icon: 'https://i.ibb.co.com/9H4xW9w8/node.png', color: 'text-green-500', type: 'image' },
+    { name: 'Express.js', icon: 'ri-server-line', color: 'text-gray-600', type: 'remix' },
+    { name: 'JWT Authentication', icon: 'ri-key-2-fill', color: 'text-purple-500', type: 'remix' },
+    { name: 'REST APIs', icon: 'ri-code-s-slash-line', color: 'text-indigo-500', type: 'remix' }
+  ];
+
+  const databaseSkills = [
+    { name: 'MongoDB Atlas', icon: 'ri-database-fill', color: 'text-green-600' },
+    { name: 'Firebase', icon: 'ri-fire-line', color: 'text-orange-500' }
+  ];
+
+  const authSkills = [
+    { name: 'JWT Authentication', icon: 'ri-key-2-fill', color: 'text-purple-500' },
+    { name: 'Firebase Auth', icon: 'ri-shield-check-line', color: 'text-orange-500' },
+    { name: 'Role-based Access', icon: 'ri-admin-line', color: 'text-blue-500' }
   ];
 
   const frontendTools = [
@@ -152,32 +149,27 @@ const Skills = () => {
                   </div>
                   <h3 className="text-2xl font-display font-bold">Frontend Skills</h3>
                 </div>
-                <div className="space-y-6">
+                <div className="grid grid-cols-2 gap-4">
                   {frontendSkills.map((skill, index) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between mb-2">
-                        <span className="font-medium flex items-center gap-2">
-                          {skill.type === 'image' ? (
-                            <img 
-                              src={skill.icon} 
-                              alt={skill.name}
-                              className="w-4 h-4"
-                            />
-                          ) : (
-                            <i className={`${skill.icon} text-primary`}></i>
-                          )}
-                          {skill.name}
-                        </span>
-                        <span className="text-sm text-text-muted-dark">{skill.level}%</span>
-                      </div>
-                      <div className="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full">
-                        <div 
-                          className={`skill-progress h-full bg-gradient-to-r ${skill.color} rounded-full`}
-                          data-width={skill.level}
-                          style={{ width: '0%' }}
-                        ></div>
-                      </div>
-                    </div>
+                    <motion.div
+                      key={skill.name}
+                      className="flex items-center gap-3 p-4 rounded-xl bg-background-light dark:bg-background-dark/50 hover:bg-primary/10 transition-all duration-300 group cursor-default"
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      {skill.type === 'image' ? (
+                        <img 
+                          src={skill.icon} 
+                          alt={skill.name}
+                          className="w-8 h-8 group-hover:scale-110 transition-transform"
+                        />
+                      ) : (
+                        <i className={`${skill.icon} text-2xl ${skill.color} group-hover:scale-110 transition-transform`}></i>
+                      )}
+                      <span className="font-medium text-sm">{skill.name}</span>
+                    </motion.div>
                   ))}
                 </div>
               </CardContent>
@@ -194,32 +186,27 @@ const Skills = () => {
                   </div>
                   <h3 className="text-2xl font-display font-bold">Backend Skills</h3>
                 </div>
-                <div className="space-y-6">
+                <div className="grid grid-cols-2 gap-4">
                   {backendSkills.map((skill, index) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between mb-2">
-                        <span className="font-medium flex items-center gap-2">
-                          {skill.type === 'image' ? (
-                            <img 
-                              src={skill.icon} 
-                              alt={skill.name}
-                              className="w-4 h-4"
-                            />
-                          ) : (
-                            <i className={`${skill.icon} text-green-500`}></i>
-                          )}
-                          {skill.name}
-                        </span>
-                        <span className="text-sm text-text-muted-dark">{skill.level}%</span>
-                      </div>
-                      <div className="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full">
-                        <div 
-                          className={`skill-progress h-full bg-gradient-to-r ${skill.color} rounded-full`}
-                          data-width={skill.level}
-                          style={{ width: '0%' }}
-                        ></div>
-                      </div>
-                    </div>
+                    <motion.div
+                      key={skill.name}
+                      className="flex items-center gap-3 p-4 rounded-xl bg-background-light dark:bg-background-dark/50 hover:bg-primary/10 transition-all duration-300 group cursor-default"
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                      transition={{ delay: index * 0.1 + 0.2 }}
+                    >
+                      {skill.type === 'image' ? (
+                        <img 
+                          src={skill.icon} 
+                          alt={skill.name}
+                          className="w-8 h-8 group-hover:scale-110 transition-transform"
+                        />
+                      ) : (
+                        <i className={`${skill.icon} text-2xl ${skill.color} group-hover:scale-110 transition-transform`}></i>
+                      )}
+                      <span className="font-medium text-sm">{skill.name}</span>
+                    </motion.div>
                   ))}
                 </div>
               </CardContent>
@@ -236,28 +223,19 @@ const Skills = () => {
                   </div>
                   <h3 className="text-2xl font-display font-bold">Database & Cloud</h3>
                 </div>
-                <div className="space-y-4">
-                  {[
-                    { name: 'MongoDB Atlas', level: 75, icon: 'ri-database-fill', color: 'from-green-400 to-green-600' },
-                    { name: 'Firebase', level: 70, icon: 'ri-fire-line', color: 'from-orange-400 to-orange-600' },
-                    { name: 'Cloud Deployment', level: 65, icon: 'ri-cloud-line', color: 'from-blue-400 to-blue-600' }
-                  ].map((skill, index) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between mb-2">
-                        <span className="font-medium flex items-center gap-2">
-                          <i className={`${skill.icon} text-primary`}></i>
-                          {skill.name}
-                        </span>
-                        <span className="text-sm text-text-muted-dark">{skill.level}%</span>
-                      </div>
-                      <div className="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full">
-                        <div 
-                          className={`skill-progress h-full bg-gradient-to-r ${skill.color} rounded-full`}
-                          data-width={skill.level}
-                          style={{ width: '0%' }}
-                        ></div>
-                      </div>
-                    </div>
+                <div className="grid grid-cols-1 gap-4">
+                  {databaseSkills.map((skill, index) => (
+                    <motion.div
+                      key={skill.name}
+                      className="flex items-center gap-3 p-4 rounded-xl bg-background-light dark:bg-background-dark/50 hover:bg-primary/10 transition-all duration-300 group cursor-default"
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                      transition={{ delay: index * 0.1 + 0.4 }}
+                    >
+                      <i className={`${skill.icon} text-2xl ${skill.color} group-hover:scale-110 transition-transform`}></i>
+                      <span className="font-medium text-sm">{skill.name}</span>
+                    </motion.div>
                   ))}
                 </div>
               </CardContent>
@@ -274,28 +252,19 @@ const Skills = () => {
                   </div>
                   <h3 className="text-2xl font-display font-bold">Authentication & Security</h3>
                 </div>
-                <div className="space-y-4">
-                  {[
-                    { name: 'JWT Authentication', level: 60, icon: 'ri-key-2-fill', color: 'from-purple-400 to-purple-600' },
-                    { name: 'Firebase Auth', level: 70, icon: 'ri-shield-check-line', color: 'from-orange-400 to-orange-600' },
-                    { name: 'Role-based Access', level: 65, icon: 'ri-admin-line', color: 'from-blue-400 to-blue-600' }
-                  ].map((skill, index) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between mb-2">
-                        <span className="font-medium flex items-center gap-2">
-                          <i className={`${skill.icon} text-primary`}></i>
-                          {skill.name}
-                        </span>
-                        <span className="text-sm text-text-muted-dark">{skill.level}%</span>
-                      </div>
-                      <div className="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full">
-                        <div 
-                          className={`skill-progress h-full bg-gradient-to-r ${skill.color} rounded-full`}
-                          data-width={skill.level}
-                          style={{ width: '0%' }}
-                        ></div>
-                      </div>
-                    </div>
+                <div className="grid grid-cols-1 gap-4">
+                  {authSkills.map((skill, index) => (
+                    <motion.div
+                      key={skill.name}
+                      className="flex items-center gap-3 p-4 rounded-xl bg-background-light dark:bg-background-dark/50 hover:bg-primary/10 transition-all duration-300 group cursor-default"
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                      transition={{ delay: index * 0.1 + 0.6 }}
+                    >
+                      <i className={`${skill.icon} text-2xl ${skill.color} group-hover:scale-110 transition-transform`}></i>
+                      <span className="font-medium text-sm">{skill.name}</span>
+                    </motion.div>
                   ))}
                 </div>
               </CardContent>

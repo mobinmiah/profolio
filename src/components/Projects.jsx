@@ -13,43 +13,83 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Asset Management System",
-      description: "A comprehensive asset management platform with role-based access control (HR/Employee roles), asset request & approval workflow, and company-based asset management with subscription system.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAJjWV5KxSLIe7UfPXrEiiJRA-2Rt1RqZkTnfNGL_wku1onpx0DLCIFFC9jTksawVz30bXEG0ZJou7UOa-n9ueA2M_oG50El2ETRzjAZiXFeE0paxaquKfJc2k0cgdU_7zLDdO_SoEEvZvv6JlfVQ2K9IycH-lYpKONpO0ihBo0rDmhaCafDVdZSEK-vNqp_f6qEPg_anUslOS5unZSL3VGccj13zP58JZ2anzeSZxN-alPxXi4N2LLojGFGSh_0YPbF7_C57yOufM",
-      category: "Full Stack",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Firebase Auth", "JWT"],
-      liveLink: "https://asset-management-demo.netlify.app",
-      githubLink: "https://github.com/mobinmiah/asset-management-client",
-      mainTech: "MERN Stack with Firebase Authentication, JWT, Stripe Payment Integration",
-      challenges: "Implementing complex role-based access control system with HR and Employee roles, managing asset approval workflows, and integrating secure payment processing for subscription management.",
-      improvements: "Planning to add real-time notifications for asset requests, advanced reporting dashboard, mobile app version, and integration with inventory management systems."
+      title: "ZapShift",
+      description:
+        "A modern parcel and delivery management platform built with the MERN stack, featuring secure authentication, role-based dashboards, order tracking, and payment processing.",
+      image: "https://i.ibb.co.com/39T3x08b/zap1.png",
+      category: "Parcel & Delivery Management",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase Authentication",
+        "JWT",
+        "Stripe",
+      ],
+      liveLink: "https://zap-shift-transportation.netlify.app",
+      githubLink: "https://github.com/mobinmiah/zap-shift-client",
+      mainTech:
+        "MERN Stack with Firebase Authentication, Role-Based Access Control, and Stripe Integration",
+      challenges:
+        "Implementing secure authentication with Firebase and JWT, building role-based dashboards for Admin, Rider, and Customer, and managing parcel data efficiently using MongoDB.",
+      improvements:
+        "Planned features include real-time parcel tracking updates, notification system, performance optimization, advanced analytics dashboard, and future mobile application version.",
     },
+
     {
       id: 2,
-      title: "Employee Management Portal",
-      description: "A modern employee management system with authentication, role-based dashboards, asset tracking, and payment processing for company subscriptions using MERN stack.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDIk5rn22nmQiy_a0r93TDL1HQQbtSUUApL-V-7anArlUsFPwfuutP1HKSaeSnVLWke3ygd_Uchde0aefj2rSd5mU6G89KLzL25lzBaQeqVUcGX6v2LXk_Y3uSoNRIhENhRLvfEBC_GLLmbWpHtfl735F8xbXMm6BSaRhf3-ACL7aJ5FZt_yd75kPOvzhe4d-nu7mvYDWafDFVFlZBoca4Ujetj0VkqNP5sYfMaRapit_9RNBjM4r_uhbiaMPWltvqCEv_pqhXUj0Q",
-      category: "Web Application",
-      technologies: ["React", "Tailwind CSS", "DaisyUI", "Express.js", "MongoDB"],
-      liveLink: "https://employee-portal-demo.netlify.app",
-      githubLink: "https://github.com/mobinmiah/employee-portal-client",
-      mainTech: "React.js, Node.js, Express.js, MongoDB Atlas, Firebase Authentication",
-      challenges: "Building secure authentication system with Firebase and JWT cookies, implementing TanStack React Query for efficient data fetching and caching, and creating responsive UI with Tailwind CSS and DaisyUI components.",
-      improvements: "Adding advanced analytics dashboard, implementing real-time chat system, integrating with third-party HR tools, and developing progressive web app (PWA) capabilities."
+      title: "TravelEase",
+      description:
+        "A full-featured vehicle booking and trip management platform built with the MERN stack, offering secure authentication, dynamic booking workflows, and a smooth user experience.",
+      image: "https://i.ibb.co.com/q3h7zJ5Z/travel-2-recent-light.png",
+      category: "Travel & Vehicle Booking",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase Authentication",
+        "JWT",
+        "Stripe",
+        "Tailwind CSS",
+      ],
+      liveLink: "https://traveleasevehicles.netlify.app",
+      githubLink: "https://github.com/mobinmiah/travel-ease-client",
+      mainTech:
+        "MERN Stack with Firebase Authentication, JWT Authorization, Secure Booking System, and Payment Integration",
+      challenges:
+        "Designing a complete vehicle booking flow, implementing secure user authentication, handling real-time availability, and building a responsive UI with advanced search and filtering features.",
+      improvements:
+        "Planned enhancements include real-time trip updates, live chat support, performance optimization, improved booking analytics, and progressive web app (PWA) features.",
     },
+
     {
       id: 3,
-      title: "Personal Blog Platform",
-      description: "A modern blogging platform with rich text editor, comment system, and social sharing features built for content creators.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAwwHGrVwSd0VzXXQgEv63Qb-nCVFhrtP01vw2PCY2hyM1duWHUWtpoffZjb03segpO7YaynAYJVqpfA3L9znt0lczibFh8YCP3xaoo8wvFJkSFb6omLyayMztzwNSR14dt1DV2yq2wUuvrF6vFiarUmabeKsRNFnz-oZhXOzjfgg-inrjdrqZbjO1nzLXAAriwooJXR0GI6kYw9vttk9OxHA9rSfaXSNKXJoM0L8OJ-O-4eb7yM7zxtgOyac3ObznZI1cbolqlLLM",
-      category: "Content Platform",
-      technologies: ["React", "Express", "MongoDB", "JWT"],
-      liveLink: "https://blogplatform-demo.netlify.app",
-      githubLink: "https://github.com/mobinmiah/blog-client",
-      mainTech: "MERN Stack with JWT Authentication and Rich Text Editor",
-      challenges: "Creating a robust rich text editor with image upload functionality and implementing SEO-friendly URL structures for blog posts.",
-      improvements: "Planning to add multi-language support, advanced SEO optimization, and integration with social media platforms for automatic post sharing."
-    }
+      title: "AssetVerse",
+      description:
+        "A full-featured asset management platform built with the MERN stack, designed for companies to manage assets, handle requests and approvals, and control access through role-based dashboards.",
+      image: "https://i.ibb.co.com/hx6jH12B/asset1.png",
+      category: "Enterprise Asset Management",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase Authentication",
+        "JWT",
+        "Stripe",
+        "Tailwind CSS",
+      ],
+      liveLink: "https://asset-verse-by-me.netlify.app",
+      githubLink: "https://github.com/mobinmiah/asset-verse-client",
+      mainTech:
+        "MERN Stack with Firebase Authentication, JWT Authorization, Role-Based Access Control, and Subscription Payment System with Stripe",
+      challenges:
+        "Designing a secure role-based system for HR and Employees, building asset request and approval workflows, managing company assets efficiently, and integrating Stripe for subscription-based payments.",
+      improvements:
+        "Planned features include real-time asset notifications, advanced reporting and analytics dashboard, performance optimization, and future mobile application support.",
+    },
   ];
 
   const containerVariants = {
