@@ -121,7 +121,8 @@ const Hero = () => {
               asChild
             >
               <motion.a
-                href="#"
+                href="/resume.pdf"
+                download="Mobin_Miah_Resume.pdf"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

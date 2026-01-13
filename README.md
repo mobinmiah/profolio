@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my skills and projects as a ME
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://mobinmiah.netlify.app)
+[View Live Portfolio](https://mobin-miah.netlify.app)
 
 ## 🛠️ Built With
 
@@ -25,7 +25,6 @@ A modern, responsive portfolio website showcasing my skills and projects as a ME
 - ⚡ **Smooth Animations** - Framer Motion & GSAP
 - 📧 **Contact Form** - Working contact form with Formspree
 - 🚀 **Fast Loading** - Optimized performance
-- 🎯 **SEO Friendly** - Proper meta tags and structure
 
 ## 📂 Project Structure
 
@@ -52,7 +51,7 @@ src/
 
 ### Prerequisites
 - Node.js (v14 or higher)
-- npm or yarn
+- npm
 
 ### Installation
 
@@ -74,7 +73,7 @@ src/
 
 4. **Open your browser**
    ```
-   http://localhost:3000
+   http://localhost:5173
    ```
 
 ### Build for Production
@@ -92,7 +91,7 @@ The contact form uses Formspree for handling submissions:
 1. Create account at [Formspree.io](https://formspree.io)
 2. Create a new form
 3. Update the form ID in `src/components/Contact.jsx`
-4. Replace `mlgdaqrk` with your form ID
+4. Replace `********` with your form ID
 
 ## 🎨 Customization
 
@@ -119,7 +118,7 @@ colors: {
 
 ## 🚀 Deployment
 
-### Netlify (Recommended)
+### Netlify
 1. Build the project: `npm run build`
 2. Drag the `build` folder to [Netlify](https://netlify.com)
 3. Get instant live URL
@@ -128,15 +127,10 @@ colors: {
 1. Connect GitHub repository
 2. Auto-deploy on every push
 
-### GitHub Pages
-1. Install gh-pages: `npm install --save-dev gh-pages`
-2. Add deploy script to package.json
-3. Run: `npm run deploy`
-
 ## 👨‍💻 Author
 
 **Mobin Miah**
-- Portfolio: [mobinmiah.netlify.app](https://mobinmiah.netlify.app)
+- Portfolio: [mobinmiah.netlify.app](https://mobin-miah.netlify.app)
 - LinkedIn: [linkedin.com/in/mobin-miah](https://www.linkedin.com/in/mobin-miah)
 - GitHub: [github.com/mobinmiah](https://github.com/mobinmiah)
 - Repository: [github.com/mobinmiah/profolio](https://github.com/mobinmiah/profolio)

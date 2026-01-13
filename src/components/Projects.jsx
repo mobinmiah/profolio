@@ -81,12 +81,12 @@ const Projects = () => {
         "Stripe",
         "Tailwind CSS",
       ],
-      liveLink: "https://asset-verse-by-me.netlify.app",
+      liveLink: "https://asset-verse-mobin.pages.dev",
       githubLink: "https://github.com/mobinmiah/asset-verse-client",
       mainTech:
         "MERN Stack with Firebase Authentication, JWT Authorization, Role-Based Access Control, and Subscription Payment System with Stripe",
       challenges:
-        "Designing a secure role-based system for HR and Employees, building asset request and approval workflows, managing company assets efficiently, and integrating Stripe for subscription-based payments.",
+        "Designing a secure role-based system for Admin, HR and Employees, building asset request and approval workflows, managing company assets efficiently, and integrating Stripe for subscription-based payments.",
       improvements:
         "Planned features include real-time asset notifications, advanced reporting and analytics dashboard, performance optimization, and future mobile application support.",
     },
