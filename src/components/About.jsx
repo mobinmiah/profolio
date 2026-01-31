@@ -58,7 +58,7 @@ const About = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex-grow flex flex-col justify-start px-4 md:px-12 py-12 relative overflow-hidden"
+      className="flex-grow flex flex-col justify-start px-4 md:px-12 py-12 relative overflow-hidden md:pt-36"
       id="about"
     >
       {/* Background Blobs */}

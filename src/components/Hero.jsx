@@ -64,7 +64,7 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="flex-grow flex flex-col justify-center px-4 md:px-12 py-12 relative overflow-hidden"
+      className="flex-grow flex flex-col justify-center px-4 md:px-12 py-12 relative overflow-hidden pt-28"
       id="home"
     >
       {/* Background Blobs */}

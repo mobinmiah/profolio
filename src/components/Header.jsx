@@ -6,7 +6,6 @@ const Header = ({ darkMode, toggleTheme }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  // Scroll spy functionality
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'services', 'process', 'skills', 'projects', 'contact'];
@@ -22,7 +21,7 @@ const Header = ({ darkMode, toggleTheme }) => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Call once to set initial active section
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -43,7 +42,7 @@ const Header = ({ darkMode, toggleTheme }) => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="sticky top-0 w-full py-6 px-4 md:px-12 flex justify-between items-center relative z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-800/20"
+        className="sticky top-0 w-full py-6 px-4 md:px-12 flex justify-between items-center z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-800/20"
       >
         <motion.a
           href="#home"
