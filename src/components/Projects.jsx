@@ -28,7 +28,7 @@ const Projects = () => {
         "Stripe",
         "Tailwind CSS",
       ],
-      liveLink: "https://asset-verse-by-me.netlify.app",
+      liveLink: "https://asset-verse-mobin.pages.dev",
       githubLink: "https://github.com/mobinmiah/asset-verse-client",
       mainTech:
         "MERN Stack with Firebase Authentication, JWT Authorization, Role-Based Access Control, and Subscription Payment System with Stripe",
