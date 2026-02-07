@@ -80,12 +80,48 @@ const Skills = () => {
   ];
 
   const frontendTools = [
-    { name: 'Vite', type: 'Build Tool', icon: 'ri-flashlight-line', color: 'text-yellow-500' },
-    { name: 'React Router', type: 'Routing', icon: 'ri-route-line', color: 'text-blue-500' },
-    { name: 'Axios', type: 'HTTP Client', icon: 'ri-global-line', color: 'text-green-500' },
-    { name: 'TanStack Query', type: 'Data Fetching', icon: 'ri-database-2-line', color: 'text-red-500' },
-    { name: 'DaisyUI', type: 'UI Components', icon: 'ri-palette-line', color: 'text-purple-500' },
-    { name: 'Firebase Auth', type: 'Authentication', icon: 'ri-shield-check-line', color: 'text-orange-500' }
+    {
+      name: "Vite",
+      type: "Build Tool",
+      icon: "ri-flashlight-line",
+      color: "text-yellow-500",
+    },
+    {
+      name: "React Router",
+      type: "Routing",
+      icon: "ri-route-line",
+      color: "text-blue-500",
+    },
+    {
+      name: "Axios",
+      type: "HTTP Client",
+      icon: "ri-global-line",
+      color: "text-green-500",
+    },
+    {
+      name: "TanStack Query",
+      type: "Data Fetching",
+      icon: "ri-database-2-line",
+      color: "text-red-500",
+    },
+    {
+      name: "DaisyUI",
+      type: "UI Components",
+      icon: "ri-palette-line",
+      color: "text-purple-500",
+    },
+    {
+      name: "Formspree",
+      type: "Form Handling",
+      icon: "ri-mail-send-line",
+      color: "text-purple-600",
+    },
+    {
+      name: "Firebase Auth",
+      type: "Authentication",
+      icon: "ri-shield-check-line",
+      color: "text-orange-500",
+    },
   ];
 
   const backendTools = [
@@ -93,6 +129,7 @@ const Skills = () => {
     { name: 'Stripe', type: 'Payments', icon: 'ri-bank-card-line', color: 'text-blue-600' },
     { name: 'Firebase Admin', type: 'Server Auth', icon: 'ri-admin-line', color: 'text-orange-600' },
     { name: 'JWT Cookies', type: 'Security', icon: 'ri-cookie-line', color: 'text-yellow-600' },
+    
     { name: 'CORS', type: 'Security', icon: 'ri-shield-line', color: 'text-red-600' },
     { name: 'dotenv', type: 'Config', icon: 'ri-settings-3-line', color: 'text-gray-600' }
   ];
