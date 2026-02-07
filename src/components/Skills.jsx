@@ -99,15 +99,22 @@ const Skills = () => {
 
   const deploymentTools = [
     { name: 'Git & GitHub', type: 'Version Control', icon: 'ri-git-branch-line', color: 'text-orange-600' },
+    { name: 'Hostinger', type: 'Production Hosting', icon: 'ri-global-line', color: 'text-purple-600' },
+    { name: 'Netlify', type: 'Frontend Deploy', icon: 'ri-cloud-line', color: 'text-teal-500' },
     { name: 'Vercel', type: 'Backend Deploy', icon: 'ri-rocket-line', color: 'text-black dark:text-white' },
-    { name: 'VS Code', type: 'IDE', icon: 'ri-code-box-line', color: 'text-blue-600' },
-    { name: 'Netlify', type: 'Hosting and Frontend Deploy', icon: 'ri-global-line', color: 'text-teal-500' }
+    { name: 'VS Code', type: 'IDE', icon: 'ri-code-box-line', color: 'text-blue-600' }
+  ];
+
+  const aiTools = [
+    { name: 'ChatGPT', type: 'AI Research & Problem Solving', icon: 'ri-chat-3-line', color: 'text-green-600' },
+    { name: 'Kiro', type: 'Agentic AI IDE', icon: 'ri-robot-line', color: 'text-purple-600' },
+    { name: 'AI-Assisted Coding', type: 'Development Enhancement', icon: 'ri-magic-line', color: 'text-pink-600' }
   ];
 
   return (
     <section 
       ref={sectionRef}
-      className="flex-grow flex flex-col justify-start px-4 md:px-12 py-12 relative overflow-hidden pt-36"
+      className="flex-grow flex flex-col justify-start px-4 md:px-12 py-12 relative overflow-hidden pt-24"
       id="skills"
     >
       {/* Background Blobs */}
@@ -288,7 +295,7 @@ const Skills = () => {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {/* Frontend Tools */}
                 <div>
                   <h4 className="font-bold text-lg mb-4 flex items-center gap-2">
@@ -356,6 +363,32 @@ const Skills = () => {
                         initial={{ opacity: 0, x: -20 }}
                         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                         transition={{ delay: 0.7 + index * 0.1 }}
+                      >
+                        <i className={`${tool.icon} text-lg ${tool.color} group-hover:scale-110 transition-transform`}></i>
+                        <div>
+                          <h5 className="font-semibold text-sm">{tool.name}</h5>
+                          <p className="text-xs text-text-muted-light dark:text-text-muted-dark">{tool.type}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* AI Tools */}
+                <div>
+                  <h4 className="font-bold text-lg mb-4 flex items-center gap-2">
+                    <i className="ri-sparkling-line text-purple-500"></i>
+                    AI Tools
+                  </h4>
+                  <div className="space-y-3">
+                    {aiTools.map((tool, index) => (
+                      <motion.div
+                        key={tool.name}
+                        className="flex items-center gap-3 p-3 rounded-lg bg-background-light dark:bg-background-dark/50 hover:bg-primary/10 transition-colors group cursor-default"
+                        whileHover={{ x: 5 }}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                        transition={{ delay: 0.9 + index * 0.1 }}
                       >
                         <i className={`${tool.icon} text-lg ${tool.color} group-hover:scale-110 transition-transform`}></i>
                         <div>

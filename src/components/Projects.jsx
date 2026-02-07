@@ -13,6 +13,60 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "AssetVerse",
+      description:
+        "A full-featured asset management platform built with the MERN stack, designed for companies to manage assets, handle requests and approvals, and control access through role-based dashboards.",
+      image: "https://i.ibb.co.com/hx6jH12B/asset1.png",
+      category: "Enterprise Asset Management",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase Authentication",
+        "JWT",
+        "Stripe",
+        "Tailwind CSS",
+      ],
+      liveLink: "https://asset-verse-by-me.netlify.app",
+      githubLink: "https://github.com/mobinmiah/asset-verse-client",
+      mainTech:
+        "MERN Stack with Firebase Authentication, JWT Authorization, Role-Based Access Control, and Subscription Payment System with Stripe",
+      challenges:
+        "Designing a secure role-based system for Admin, HR and Employees, building asset request and approval workflows, managing company assets efficiently, and integrating Stripe for subscription-based payments.",
+      improvements:
+        "Planned features include real-time asset notifications, advanced reporting and analytics dashboard, performance optimization, and future mobile application support.",
+    },
+
+    {
+      id: 2,
+      title: "TravelEase",
+      description:
+        "A full-featured vehicle booking and trip management platform built with the MERN stack, offering secure authentication, dynamic booking workflows, and a smooth user experience.",
+      image: "https://i.ibb.co.com/q3h7zJ5Z/travel-2-recent-light.png",
+      category: "Travel & Vehicle Booking",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase Authentication",
+        "JWT",
+        "Stripe",
+        "Tailwind CSS",
+      ],
+      liveLink: "https://travel-ease-vehicles.netlify.app",
+      githubLink: "https://github.com/mobinmiah/travel-ease-client",
+      mainTech:
+        "MERN Stack with Firebase Authentication, JWT Authorization, Secure Booking System, and Payment Integration",
+      challenges:
+        "Designing a complete vehicle booking flow, implementing secure user authentication, handling real-time availability, and building a responsive UI with advanced search and filtering features.",
+      improvements:
+        "Planned enhancements include real-time trip updates, live chat support, performance optimization, improved booking analytics, and progressive web app (PWA) features.",
+    },
+
+    {
+      id: 3,
       title: "ZapShift",
       description:
         "A modern parcel and delivery management platform built with the MERN stack, featuring secure authentication, role-based dashboards, order tracking, and payment processing.",
@@ -35,60 +89,6 @@ const Projects = () => {
         "Implementing secure authentication with Firebase and JWT, building role-based dashboards for Admin, Rider, and Customer, and managing parcel data efficiently using MongoDB.",
       improvements:
         "Planned features include real-time parcel tracking updates, notification system, performance optimization, advanced analytics dashboard, and future mobile application version.",
-    },
-
-    {
-      id: 2,
-      title: "TravelEase",
-      description:
-        "A full-featured vehicle booking and trip management platform built with the MERN stack, offering secure authentication, dynamic booking workflows, and a smooth user experience.",
-      image: "https://i.ibb.co.com/q3h7zJ5Z/travel-2-recent-light.png",
-      category: "Travel & Vehicle Booking",
-      technologies: [
-        "React",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Firebase Authentication",
-        "JWT",
-        "Stripe",
-        "Tailwind CSS",
-      ],
-      liveLink: "https://traveleasevehicles.netlify.app",
-      githubLink: "https://github.com/mobinmiah/travel-ease-client",
-      mainTech:
-        "MERN Stack with Firebase Authentication, JWT Authorization, Secure Booking System, and Payment Integration",
-      challenges:
-        "Designing a complete vehicle booking flow, implementing secure user authentication, handling real-time availability, and building a responsive UI with advanced search and filtering features.",
-      improvements:
-        "Planned enhancements include real-time trip updates, live chat support, performance optimization, improved booking analytics, and progressive web app (PWA) features.",
-    },
-
-    {
-      id: 3,
-      title: "AssetVerse",
-      description:
-        "A full-featured asset management platform built with the MERN stack, designed for companies to manage assets, handle requests and approvals, and control access through role-based dashboards.",
-      image: "https://i.ibb.co.com/hx6jH12B/asset1.png",
-      category: "Enterprise Asset Management",
-      technologies: [
-        "React",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Firebase Authentication",
-        "JWT",
-        "Stripe",
-        "Tailwind CSS",
-      ],
-      liveLink: "https://asset-verse-mobin.pages.dev",
-      githubLink: "https://github.com/mobinmiah/asset-verse-client",
-      mainTech:
-        "MERN Stack with Firebase Authentication, JWT Authorization, Role-Based Access Control, and Subscription Payment System with Stripe",
-      challenges:
-        "Designing a secure role-based system for Admin, HR and Employees, building asset request and approval workflows, managing company assets efficiently, and integrating Stripe for subscription-based payments.",
-      improvements:
-        "Planned features include real-time asset notifications, advanced reporting and analytics dashboard, performance optimization, and future mobile application support.",
     },
   ];
 
@@ -207,7 +207,7 @@ const Projects = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex-grow flex flex-col px-4 md:px-12 py-12 relative overflow-hidden pt-36"
+      className="flex-grow flex flex-col px-4 md:px-12 py-12 relative overflow-hidden pt-24"
       id="projects"
     >
       {/* Background Blobs */}
