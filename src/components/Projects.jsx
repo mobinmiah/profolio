@@ -16,7 +16,7 @@ const Projects = () => {
       title: "AssetVerse",
       description:
         "A full-featured asset management platform built with the MERN stack, designed for companies to manage assets, handle requests and approvals, and control access through role-based dashboards.",
-      image: "https://i.ibb.co.com/hx6jH12B/asset1.png",
+      image: "https://i.ibb.co.com/0VQkJdzd/Banner.png",
       category: "Enterprise Asset Management",
       technologies: [
         "React",
@@ -55,7 +55,7 @@ const Projects = () => {
         "Stripe",
         "Tailwind CSS",
       ],
-      liveLink: "https://travel-ease-vehicles.netlify.app",
+      liveLink: "https://travelease-by-mobin.netlify.app",
       githubLink: "https://github.com/mobinmiah/travel-ease-client",
       mainTech:
         "MERN Stack with Firebase Authentication, JWT Authorization, Secure Booking System, and Payment Integration",
