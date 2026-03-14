@@ -55,7 +55,7 @@ const Projects = () => {
         "Stripe",
         "Tailwind CSS",
       ],
-      liveLink: "https://travelease-by-mobin.netlify.app",
+      liveLink: "https://travelease-e5v.pages.dev",
       githubLink: "https://github.com/mobinmiah/travel-ease-client",
       mainTech:
         "MERN Stack with Firebase Authentication, JWT Authorization, Secure Booking System, and Payment Integration",
@@ -81,7 +81,7 @@ const Projects = () => {
         "JWT",
         "Stripe",
       ],
-      liveLink: "https://zap-shift-transportation.netlify.app",
+      liveLink: "https://zap-shift-9fw.pages.dev",
       githubLink: "https://github.com/mobinmiah/zap-shift-client",
       mainTech:
         "MERN Stack with Firebase Authentication, Role-Based Access Control, and Stripe Integration",

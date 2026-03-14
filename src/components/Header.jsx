@@ -1,14 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from './ui/button';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "./ui/button";
 
 const Header = ({ darkMode, toggleTheme }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'services', 'process', 'skills', 'projects', 'contact'];
+      const sections = [
+        "home",
+        "about",
+        "services",
+        "process",
+        "skills",
+        "projects",
+        "contact",
+      ];
       const scrollPosition = window.scrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -20,10 +28,10 @@ const Header = ({ darkMode, toggleTheme }) => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMobileMenu = () => {
@@ -34,11 +42,19 @@ const Header = ({ darkMode, toggleTheme }) => {
     setIsMobileMenuOpen(false);
   };
 
-  const navItems = ['Home', 'About', 'Services', 'Process', 'Skills', 'Projects', 'Contact'];
+  const navItems = [
+    "Home",
+    "About",
+    "Services",
+    "Projects",
+    "Process",
+    "Skills",
+    "Contact",
+  ];
 
   return (
     <>
-      <motion.header 
+      <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -53,7 +69,9 @@ const Header = ({ darkMode, toggleTheme }) => {
           <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-neon">
             M
           </div>
-          <span className="font-display font-bold text-xl tracking-wide uppercase">Mobin</span>
+          <span className="font-display font-bold text-xl tracking-wide uppercase">
+            Mobin
+          </span>
         </motion.a>
 
         {/* Desktop Navigation */}
@@ -64,9 +82,9 @@ const Header = ({ darkMode, toggleTheme }) => {
               <motion.a
                 key={item}
                 className={`${
-                  isActive 
-                    ? 'text-primary font-bold relative' 
-                    : 'hover:text-primary'
+                  isActive
+                    ? "text-primary font-bold relative"
+                    : "hover:text-primary"
                 } transition-all duration-300 cursor-pointer`}
                 href={`#${item.toLowerCase()}`}
                 whileHover={{ y: -2 }}
@@ -96,20 +114,20 @@ const Header = ({ darkMode, toggleTheme }) => {
             className="p-2 rounded-full bg-surface-light dark:bg-surface-dark shadow-sm hover:text-primary transition-colors"
             onClick={toggleTheme}
           >
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <i className={`${darkMode ? 'ri-sun-line' : 'ri-moon-line'}`}></i>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              <i className={`${darkMode ? "ri-sun-line" : "ri-moon-line"}`}></i>
             </motion.div>
           </Button>
 
           {/* Desktop Social Links */}
           <div className="hidden md:flex gap-3">
             {[
-              { icon: 'ri-github-fill', href: 'https://github.com/mobinmiah' },
-              { icon: 'ri-linkedin-fill', href: 'https://www.linkedin.com/in/mobin-miah' },
-              { icon: 'ri-twitter-x-line', href: 'https://x.com/MobinMiah12' }
+              { icon: "ri-github-fill", href: "https://github.com/mobinmiah" },
+              {
+                icon: "ri-linkedin-fill",
+                href: "https://www.linkedin.com/in/mobin-miah",
+              },
+              { icon: "ri-twitter-x-line", href: "https://x.com/MobinMiah12" },
             ].map((social, index) => (
               <motion.a
                 key={social.icon}
@@ -134,11 +152,10 @@ const Header = ({ darkMode, toggleTheme }) => {
             className="lg:hidden p-2 text-2xl relative z-50"
             onClick={toggleMobileMenu}
           >
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <i className={`${isMobileMenuOpen ? 'ri-close-line' : 'ri-menu-4-line'}`}></i>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              <i
+                className={`${isMobileMenuOpen ? "ri-close-line" : "ri-menu-4-line"}`}
+              ></i>
             </motion.div>
           </Button>
         </div>
@@ -156,13 +173,13 @@ const Header = ({ darkMode, toggleTheme }) => {
               className="fixed inset-0 bg-black/50 z-40 lg:hidden"
               onClick={closeMobileMenu}
             />
-            
+
             {/* Mobile Menu */}
             <motion.div
-              initial={{ x: '100%' }}
+              initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'tween', duration: 0.3 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
               className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-background-light dark:bg-background-dark z-40 lg:hidden shadow-2xl"
             >
               <div className="flex flex-col h-full pt-24 px-6">
@@ -174,9 +191,9 @@ const Header = ({ darkMode, toggleTheme }) => {
                       <motion.a
                         key={item}
                         className={`${
-                          isActive 
-                            ? 'text-primary font-bold border-l-4 border-primary pl-4' 
-                            : 'text-text-main-light dark:text-text-main-dark hover:text-primary pl-4'
+                          isActive
+                            ? "text-primary font-bold border-l-4 border-primary pl-4"
+                            : "text-text-main-light dark:text-text-main-dark hover:text-primary pl-4"
                         } transition-all duration-300 cursor-pointer text-lg font-medium py-2 border-b border-gray-200/20 dark:border-gray-700/20 relative`}
                         href={`#${item.toLowerCase()}`}
                         onClick={closeMobileMenu}
@@ -206,9 +223,21 @@ const Header = ({ darkMode, toggleTheme }) => {
                   </p>
                   <div className="flex gap-4">
                     {[
-                      { icon: 'ri-github-fill', href: 'https://github.com/mobinmiah', label: 'GitHub' },
-                      { icon: 'ri-linkedin-fill', href: 'https://www.linkedin.com/in/mobin-miah', label: 'LinkedIn' },
-                      { icon: 'ri-twitter-x-line', href: 'https://x.com/MobinMiah12', label: 'Twitter' }
+                      {
+                        icon: "ri-github-fill",
+                        href: "https://github.com/mobinmiah",
+                        label: "GitHub",
+                      },
+                      {
+                        icon: "ri-linkedin-fill",
+                        href: "https://www.linkedin.com/in/mobin-miah",
+                        label: "LinkedIn",
+                      },
+                      {
+                        icon: "ri-twitter-x-line",
+                        href: "https://x.com/MobinMiah12",
+                        label: "Twitter",
+                      },
                     ].map((social, index) => (
                       <motion.a
                         key={social.icon}
