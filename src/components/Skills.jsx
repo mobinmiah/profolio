@@ -145,6 +145,7 @@ const Skills = () => {
   const aiTools = [
     { name: 'ChatGPT', type: 'AI Research & Problem Solving', icon: 'ri-chat-3-line', color: 'text-green-600' },
     { name: 'Kiro', type: 'Agentic AI IDE', icon: 'ri-robot-line', color: 'text-purple-600' },
+    { name: 'Cursor', type: 'AI Code Editor', icon: 'https://www.cursor.com/favicon.ico', iconType: 'image' },
     { name: 'AI-Assisted Coding', type: 'Development Enhancement', icon: 'ri-magic-line', color: 'text-pink-600' }
   ];
 
@@ -427,7 +428,15 @@ const Skills = () => {
                         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                         transition={{ delay: 0.9 + index * 0.1 }}
                       >
-                        <i className={`${tool.icon} text-lg ${tool.color} group-hover:scale-110 transition-transform`}></i>
+                        {tool.iconType === 'image' ? (
+                          <img
+                            src={tool.icon}
+                            alt={tool.name}
+                            className="w-5 h-5 group-hover:scale-110 transition-transform"
+                          />
+                        ) : (
+                          <i className={`${tool.icon} text-lg ${tool.color} group-hover:scale-110 transition-transform`}></i>
+                        )}
                         <div>
                           <h5 className="font-semibold text-sm">{tool.name}</h5>
                           <p className="text-xs text-text-muted-light dark:text-text-muted-dark">{tool.type}</p>

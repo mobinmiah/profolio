@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Card, CardContent } from './ui/card';
+import React, { useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Card, CardContent } from "./ui/card";
+import aboutImg from "../assets/about.png";
 
 const About = () => {
   const sectionRef = useRef(null);
@@ -16,7 +17,7 @@ const About = () => {
         duration: 5,
         repeat: -1,
         yoyo: true,
-        ease: "power2.inOut"
+        ease: "power2.inOut",
       });
 
       gsap.to(".about-blob-2", {
@@ -25,7 +26,7 @@ const About = () => {
         duration: 4,
         repeat: -1,
         yoyo: true,
-        ease: "power2.inOut"
+        ease: "power2.inOut",
       });
     }, sectionRef);
 
@@ -38,9 +39,9 @@ const About = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
+        delayChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -50,9 +51,9 @@ const About = () => {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -86,7 +87,7 @@ const About = () => {
               <img
                 alt="Mobin Miah Profile"
                 className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
-                src="https://i.ibb.co.com/5hNLYbt9/about.jpg"
+                src={aboutImg}
               />
 
               {/* Optional subtle overlay on hover */}
@@ -116,18 +117,18 @@ const About = () => {
             >
               <p>
                 Hello! I'm Mobin Miah, a Junior MERN Stack Developer from
-                Bangladesh. I started learning web development in
-                mid-2025 with Programming Hero (Batch 12). From the very
-                beginning, I was interested in how websites actually work, and
-                that curiosity quickly turned into building real projects with
-                modern web technologies.
+                Bangladesh. I started learning web development in mid-2025 with
+                Programming Hero (Batch 12). From the very beginning, I was
+                interested in how websites actually work, and that curiosity
+                quickly turned into building real projects with modern web
+                technologies.
               </p>
               <p>
                 I mainly work with React.js, Node.js, Express.js, and MongoDB to
                 create{" "}
                 <span className="text-primary font-medium">
                   full-stack applications.
-                </span>{' '}
+                </span>{" "}
                 I also have hands-on experience with Firebase Authentication,
                 JWT security, and Stripe payment integration, along with
                 building responsive user interfaces using Tailwind CSS and
@@ -136,9 +137,9 @@ const About = () => {
               <p>
                 Some of my recent projects include TravelEase, a vehicle booking
                 and trip management platform, and AssetVerse, an asset
-                management system with HR and employee roles based access. These projects
-                helped me understand how real-world applications are built and
-                how different systems work together.
+                management system with HR and employee roles based access. These
+                projects helped me understand how real-world applications are
+                built and how different systems work together.
               </p>
             </motion.div>
           </motion.div>

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { Button } from './ui/button';
-import { Download } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -64,7 +64,7 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="flex-grow flex flex-col justify-center px-4 md:px-12 py-12 relative overflow-hidden pt-24"
+      className="flex-grow flex flex-col justify-center px-4 md:px-12 py-12 relative overflow-hidden pt-12"
       id="home"
     >
       {/* Background Blobs */}
@@ -121,13 +121,14 @@ const Hero = () => {
               asChild
             >
               <motion.a
-                href="/resume.pdf"
-                download="Mobin_Miah_Resume.pdf"
+                href="https://drive.google.com/file/d/137LSiiiEYHQIAXZ0eLPmfFyJ3nQARdl4/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Download Resume
-                <Download className="w-4 h-4" />
+                My Resume
+                <ExternalLink className="w-4 h-4" />
               </motion.a>
             </Button>
           </motion.div>

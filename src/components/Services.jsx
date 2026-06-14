@@ -70,7 +70,7 @@ const Services = () => {
       ],
     },
     {
-      icon: "ri-nodejs-line",
+      icon: "ri-server-fill",
       color: "text-green-500",
       bgColor: "bg-green-500/10",
       title: "Backend Development",
@@ -162,27 +162,26 @@ const Services = () => {
                     <div className={`w-16 h-16 ${service.bgColor} rounded-2xl flex items-center justify-center ${service.color} text-3xl group-hover:scale-110 transition-transform flex-shrink-0`}>
                       <i className={service.icon}></i>
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h3 className="font-bold text-2xl mb-3">{service.title}</h3>
                       <p className="text-text-muted-light dark:text-text-muted-dark leading-relaxed mb-6">
                         {service.description}
                       </p>
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-lg">Key Features:</h4>
+                        <ul className="grid grid-cols-2 gap-2">
+                          {service.features.map((feature, featureIndex) => (
+                            <li
+                              key={featureIndex}
+                              className="flex items-center gap-2 text-sm text-text-muted-light dark:text-text-muted-dark"
+                            >
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <h4 className="font-semibold text-lg">Key Features:</h4>
-                    <ul className="grid grid-cols-2 gap-2">
-                      {service.features.map((feature, featureIndex) => (
-                        <li 
-                          key={featureIndex}
-                          className="flex items-center gap-2 text-sm text-text-muted-light dark:text-text-muted-dark"
-                        >
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </CardContent>
               </Card>

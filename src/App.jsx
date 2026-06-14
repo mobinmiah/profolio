@@ -32,6 +32,8 @@ function App() {
             infinite: false,
         });
 
+        window.__lenis = lenis;
+
         function raf(time) {
             lenis.raf(time);
             requestAnimationFrame(raf);
@@ -52,6 +54,7 @@ function App() {
 
         return () => {
             lenis.destroy();
+            window.__lenis = null;
         };
     }, []);
 
@@ -76,9 +79,9 @@ function App() {
                 <Hero />
                 <About />
                 <Services />
-                <Process />
-                <Skills />
                 <Projects />
+                <Skills />
+                <Process />
                 <Contact />
             </main>
             <Footer />

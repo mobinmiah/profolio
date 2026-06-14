@@ -167,7 +167,7 @@ const Process = () => {
               high-quality solutions that meet your business goals and exceed your expectations.
             </p>
             <motion.a
-              href="#contact"
+              href="mailto:mdmobinmiah1998@gmail.com"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-lg hover:bg-blue-600 transition-colors"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}

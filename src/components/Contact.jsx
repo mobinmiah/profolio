@@ -18,6 +18,7 @@ const Contact = () => {
     message: ''
   });
   
+  const [attachedFile, setAttachedFile] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
@@ -29,38 +30,46 @@ const Contact = () => {
     }));
   };
 
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file && file.type === 'application/pdf') {
+      setAttachedFile(file);
+    } else {
+      setAttachedFile(null);
+      e.target.value = '';
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      // Using your Formspree Form ID: mlgdaqrk
+      const data = new FormData();
+      data.append('name', formData.name);
+      data.append('email', formData.email);
+      data.append('phone', formData.phone);
+      data.append('subject', formData.subject);
+      data.append('message', formData.message);
+      data.append('_replyto', formData.email);
+      data.append('_subject', `Portfolio Contact: ${formData.subject}`);
+      if (attachedFile) {
+        data.append('attachment', attachedFile);
+      }
+
       const response = await fetch('https://formspree.io/f/mlgdaqrk', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          subject: formData.subject,
-          message: formData.message,
-          _replyto: formData.email,
-          _subject: `Portfolio Contact: ${formData.subject}`,
-        }),
+        headers: { Accept: 'application/json' },
+        body: data,
       });
 
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
+        setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
+        setAttachedFile(null);
+        const fileInput = document.getElementById('attachment');
+        if (fileInput) fileInput.value = '';
       } else {
         throw new Error('Form submission failed');
       }
@@ -358,6 +367,35 @@ const Contact = () => {
                     required
                     className="bg-background-light dark:bg-background-dark border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-primary h-40 resize-none"
                   />
+                </div>
+
+                <div className="space-y-2">
+                  <label
+                    className="text-xs uppercase font-bold text-text-muted-light dark:text-text-muted-dark tracking-widest"
+                    htmlFor="attachment"
+                  >
+                    Attach PDF <span className="normal-case font-normal">(optional)</span>
+                  </label>
+                  <div className="relative">
+                    <input
+                      id="attachment"
+                      type="file"
+                      accept=".pdf,application/pdf"
+                      onChange={handleFileChange}
+                      className="block w-full text-sm text-text-muted-light dark:text-text-muted-dark
+                        file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0
+                        file:text-sm file:font-semibold file:bg-primary/10 file:text-primary
+                        hover:file:bg-primary/20 file:cursor-pointer cursor-pointer
+                        bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700
+                        rounded-lg px-3 py-2 focus:outline-none focus:border-primary transition-colors"
+                    />
+                  </div>
+                  {attachedFile && (
+                    <p className="text-xs text-primary flex items-center gap-1 mt-1">
+                      <i className="ri-file-pdf-line"></i>
+                      {attachedFile.name}
+                    </p>
+                  )}
                 </div>
 
                 <Button

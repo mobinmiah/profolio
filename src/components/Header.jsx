@@ -12,9 +12,9 @@ const Header = ({ darkMode, toggleTheme }) => {
         "home",
         "about",
         "services",
-        "process",
-        "skills",
         "projects",
+        "skills",
+        "process",
         "contact",
       ];
       const scrollPosition = window.scrollY + 100;
@@ -47,8 +47,8 @@ const Header = ({ darkMode, toggleTheme }) => {
     "About",
     "Services",
     "Projects",
-    "Process",
     "Skills",
+    "Process",
     "Contact",
   ];
 
